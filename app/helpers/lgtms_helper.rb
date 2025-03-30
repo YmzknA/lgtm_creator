@@ -1,0 +1,2 @@
+module LgtmsHelper
+end

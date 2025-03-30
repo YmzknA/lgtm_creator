@@ -1,0 +1,14 @@
+<div id="lgtm_tweet" class="bg-white rounded-lg shadow-md p-6 mb-6 max-w-2xl mx-auto">
+  <% if @tweet %>
+    <div id="tweet">
+      <p><%= @tweet %></p>
+    </div>
+    <div class="actions mt-4">
+      <%= link_to "ツイートする", "https://twitter.com/intent/tweet?text=#{@tweet.truncate(100)}をLGTM CREATERでつくったよ！！", target: "_blank", class: "bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1" %>
+    </div>
+  <% else %>
+    <div id="tweet">
+      <p>LGTMがありません</p>
+    </div>
+  <% end %>
+</div>
