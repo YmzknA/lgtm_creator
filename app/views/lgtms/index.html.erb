@@ -1,4 +1,4 @@
-<div class="bg-blue-50 min-h-screen p-6">
+<div class="bg-[url(lgtm_bg.jpg)] min-h-screen p-6">
   <h1 class="text-3xl font-bold text-blue-700 mb-6 text-center">LGTM CREATER</h1>
   <div class="flex flex-col items-center mb-6">
     <p class="text-gray-800 mb-4">LGTM CREATERは、ある方に影響を受けて作成したアプリです。</p>
@@ -34,14 +34,14 @@
       </div>
       <div class="checkbox mb-4 flex items-center">
         <%= f.check_box :save, {checked: false, class: "h-5 w-5 text-blue-600"} %>
-        <%= f.label :save, "保存して全体公開しますか？", class: "ml-2 text-gray-700" %>
+        <%= f.label :save, "保存して全体公開する！", class: "ml-2 text-gray-700" %>
       </div>
       <div>
         <%= f.submit class: "bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:cursor-pointer" %>
       </div>
     <% end %>
   </div>
-  
+
   <div id="lgtm_tweet" class="bg-white rounded-lg shadow-md p-6 mb-6 max-w-2xl mx-auto">
     <div class="title mb-4">
       <p>完成したLGTM</p>
@@ -52,12 +52,31 @@
   <div class="flex justify-center mb-6">
     <p class="text-xl">みんなのLGTM</p>
   </div>
-  
+
   <div id="lgtm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <% @lgtms.each do |lgtm| %>
       <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
-        <p class="text-gray-800 break-words"><%= lgtm.content %></p>
+        <p class="mb-4 text-gray-800 break-words"><%= lgtm.content %></p>
+
+        <div class="flex items-center justify-end w-full">
+          <div class="bg-green-300 hover:bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:cursor-pointer"
+            data-lgtm-content="<%= lgtm.content %>"
+            onclick="copyLgtm(this)"
+            >
+            <p>コピーする</p>
+          </div>
+        </div>
+
       </div>
     <% end %>
   </div>
 </div>
+
+<script>
+  function copyLgtm(element) {
+    const text = element.dataset.lgtmContent;
+    navigator.clipboard.writeText(text);
+    alert('コピー成功👍');
+  }
+</script>
+
