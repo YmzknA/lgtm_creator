@@ -3,12 +3,27 @@
     <div id="tweet">
       <p><%= @tweet %></p>
     </div>
-    <div class="actions mt-4">
-      <%= link_to "ツイートする", "https://twitter.com/intent/tweet?text=#{@tweet.truncate(100)}をLGTM CREATERでつくったよ！！", target: "_blank", class: "bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1" %>
+    <div class="flex items-center justify-between w-full">
+      <div class="mt-4">
+        <%= link_to "ツイートする", "https://twitter.com/intent/tweet?text=#{@tweet.truncate(140)}%0A「 LGTM CREATER 」でつくったよ！%0Ahttps://lgtm-creater.fly.dev", target: "_blank", class: "bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg" %>
+      </div>
+      <div class="mt-4 ml-4">
+        <div id="copy-btn" class="bg-green-300 hover:bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:cursor-pointer">
+          コピーする
+        </div>
+      </div>
     </div>
   <% else %>
     <div id="tweet">
-      <p>LGTMがありません</p>
+      <p>まだLGTMを作っていません</p>
     </div>
   <% end %>
 </div>
+
+<script>
+  document.getElementById("copy-btn").addEventListener("click", function() {
+    const text = document.getElementById("tweet").textContent;
+    navigator.clipboard.writeText(text);
+    alert('コピー成功👍');
+  });
+</script>
