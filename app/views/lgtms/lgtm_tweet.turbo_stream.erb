@@ -2,7 +2,7 @@
   <div id="notice">
   <% if flash[:notice] %>
     <div class="bg-green-100 text-green-700 p-4 mb-4 rounded-lg">
-      <p><%= flash[:notice] %></p>
+    <p><%= flash[:notice] %></p>
     </div>
   <% end %>
   </div>
@@ -12,24 +12,3 @@
   <%= render partial: "lgtm_tweet", locals: { lgtm: @lgtm } %>
 <% end %>
 
-<%= turbo_stream.replace "lgtm" do %>
-    <div id="lgtm">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <% @lgtms.each do |lgtm| %>
-        <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition">
-          <p class="mb-4 text-gray-800 break-words"><%= lgtm.content %></p>
-
-          <div class="flex items-center justify-end w-full">
-            <div class="bg-green-300 hover:bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:cursor-pointer"
-              data-lgtm-content="<%= lgtm.content %>"
-              onclick="copyLgtm(this)"
-              >
-              <p>コピーする</p>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
-    </div>
-  </div>
-<% end %>
