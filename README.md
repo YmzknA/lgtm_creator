@@ -1,24 +1,7 @@
-# README
+ある受講生の方にインスピレーションをいただいて開発しました！
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 使い方
+入力欄に任意の絵文字を入力してください！
+そうすると、
+LGTM + 絵文字
+が繰り返されて140字ぴったりのLGTMが生成されます！
