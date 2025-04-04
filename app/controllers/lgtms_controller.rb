@@ -1,11 +1,10 @@
 class LgtmsController < ApplicationController
   def index
-    @lgtms = Lgtm.all
+    @lgtms = Lgtm.page(params[:page]).order(created_at: :desc).per(9)
     @lgtm = Lgtm.new
   end
 
   def lgtm_tweet
-    @lgtms = Lgtm.all
     @tweet = ""
     content = lgtm_params[:content]
 
