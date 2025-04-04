@@ -26,7 +26,6 @@ class LgtmsController < ApplicationController
       if lgtm_save_flag == "1"
         if @lgtm.save
           flash[:notice] = "LGTMの作成と保存に成功しました!"
-          render :index, status: :unprocessable_entity
           turbo_stream
         else
           render :index, status: :unprocessable_entity
@@ -34,7 +33,6 @@ class LgtmsController < ApplicationController
         end
       else
         flash.now[:notice] = "LGTMの作成に成功しました!"
-        render :index, status: :unprocessable_entity
         turbo_stream
       end
   end
