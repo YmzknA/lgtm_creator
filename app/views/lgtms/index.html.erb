@@ -39,7 +39,7 @@
         <%= f.label :save, "保存して全体公開する！", class: "ml-2 text-gray-700" %>
       </div>
       <div>
-        <%= f.submit "LGTM!!", class: "bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:cursor-pointer" %>
+        <%= f.submit "LGTM!!", class: "bg-blue-400 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:cursor-pointer" %>
       </div>
     <% end %>
   </div>
@@ -61,8 +61,12 @@
       <div class="flex-grow">
         <%= f.search_field :content_cont, class: 'w-full border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition', placeholder: '絵文字入力...' %>
       </div>
-      <%= f.submit '検索', class: 'bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md' %>
-      <%= link_to 'リセット', root_path, data: { turbo_frame: "lgtm" }, class: 'bg-gray-300 hover:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-md' %>
+      <%= button_tag type: 'submit', class: 'bg-blue-400 hover:bg-blue-600 text-white font-medium pt-2 pb-1 px-3 rounded-lg hover:shadow-md' do %>
+        <span class="material-symbols-outlined">search</span>
+      <% end %>
+      <%= link_to  root_path, class: 'bg-gray-300 hover:bg-gray-500 text-white font-medium pt-2 pb-1 px-3 rounded-lg hover:shadow-md', data: { turbo_frame: "lgtm" } do %>
+        <span class="material-symbols-outlined">refresh</span>
+      <% end %>
     <% end %>
   </div>
 
