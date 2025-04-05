@@ -42,16 +42,6 @@ class LgtmsController < ApplicationController
       end
   end
 
-  def search
-    @q = Lgtm.ransack(params[:q])
-    @lgtms = @q.result(distinct: true).page(params[:page]).order(created_at: :desc).per(9)
-    @lgtm = Lgtm.new
-    logger.debug "------------------------------"
-    logger.debug "params[:q]: #{params[:q]}"
-    flash[:notice] = "LGTMの検索に成功しました!"
-    turbo_stream
-  end
-
   private
 
   def lgtm_params
