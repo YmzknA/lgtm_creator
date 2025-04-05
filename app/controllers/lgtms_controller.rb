@@ -1,10 +1,14 @@
 class LgtmsController < ApplicationController
   def index
-    @lgtms = Lgtm.page(params[:page]).order(created_at: :desc).per(9)
+    @q = Lgtm.ransack(params[:q])
+    @lgtms = @q.result(distinct: true).page(params[:page]).order(created_at: :desc).per(9)
     @lgtm = Lgtm.new
   end
 
   def lgtm_tweet
+    @q = Lgtm.ransack(params[:q])
+    @lgtms = @q.result(distinct: true).page(params[:page]).order(created_at: :desc).per(9)
+
     @tweet = ""
     content = lgtm_params[:content]
 
@@ -24,6 +28,8 @@ class LgtmsController < ApplicationController
 
       if lgtm_save_flag == "1"
         if @lgtm.save
+          @q = Lgtm.ransack(params[:q])
+          @lgtms = @q.result(distinct: true).page(params[:page]).order(created_at: :desc).per(9)
           flash[:notice] = "LGTMの作成と保存に成功しました!"
           turbo_stream
         else
