@@ -59,11 +59,7 @@
   <div class="flex justify-center mb-6">
     <%= search_form_for @q, url: root_path, html: { data: { turbo_frame: "lgtm" }, class: "flex gap-2 items-center bg-white rounded-lg shadow-md p-3 w-full max-w-md" } do |f| %>
       <div class="flex-grow">
-        <div data-controller="autocomplete" data-autocomplete-url-value="<%= autocomplete_lgtms_path %>" role="combobox">
-          <%= f.search_field :content_cont, data: { autocomplete_target: 'input' }, class: 'w-full border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition', placeholder: '絵文字入力...' %>
-          <%= f.hidden_field :content, data: { autocomplete_target: 'hidden' } %>
-          <ul class="list-group absolute w-[400px]" data-autocomplete-target="results"></ul>
-        </div>
+        <%= f.search_field :content_cont, class: 'w-full border border-gray-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent transition', placeholder: '絵文字入力...' %>
       </div>
       <%= button_tag type: 'submit', class: 'bg-blue-400 hover:bg-blue-600 text-white font-medium pt-2 pb-1 px-3 rounded-lg hover:shadow-md' do %>
         <span class="material-symbols-outlined">search</span>
