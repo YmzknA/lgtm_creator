@@ -42,6 +42,13 @@ class LgtmsController < ApplicationController
       end
   end
 
+  def autocomplete
+    @lgtms = Lgtm.where("content like ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def lgtm_params

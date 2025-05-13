@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "lgtms#index"
   post "lgtm_tweet" => "lgtms#lgtm_tweet"
+
+  resources :lgtms, only: [] do
+    collection do
+      get :autocomplete
+    end
+  end
 end
