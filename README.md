@@ -11,3 +11,13 @@ https://lgtm-creater.fly.dev/
 素敵な皆さんに、LGTM送ってみませんか？  
 
 ![ogp](https://github.com/user-attachments/assets/d8aeba27-a2e5-435b-baca-39294b73a89f)
+
+| カテゴリ | 使用技術 |
+| --- | --- |
+| フロントエンド | TailwindCSS |
+| バックエンド | Ruby 3.3.6 / Rails 7.2.2 |
+| データベース | PostgreSQL |
+| 開発環境 | Docker |
+| インフラ | fly.io |
+| VCS | GitHub |
+
