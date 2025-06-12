@@ -1,4 +1,6 @@
-ある受講生の方にインスピレーションをいただいて開発しました！
+# LGTM CREATOR
+*～皆にLGTM～*  
+ある受講生の方にインスピレーションをいただいて開発しました！  
 https://lgtm-creater.fly.dev/
 
 # 使い方
@@ -8,4 +10,3 @@ https://lgtm-creater.fly.dev/
 「LGTM + 絵文字」が140文字ちょうどまで繰り返されて生成されます！  
 素敵な皆さんに、LGTM送ってみませんか？  
 
-![Screenshot 2025-04-04 131823](https://github.com/user-attachments/assets/7fa3e99a-4d08-4344-840b-db2356828f7a)
