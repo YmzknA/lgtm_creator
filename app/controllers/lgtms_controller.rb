@@ -43,7 +43,8 @@ class LgtmsController < ApplicationController
   end
 
   def autocomplete
-    @lgtms = Lgtm.where("content like ?", "%#{params[:q]}%")
+    query = params[:q].presence || ""
+    @lgtms = Lgtm.where("content ILIKE ?", "%#{ActiveRecord::Base.sanitize_sql_like(query)}%")
     respond_to do |format|
       format.js
     end
