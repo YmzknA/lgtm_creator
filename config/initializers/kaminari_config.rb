@@ -31,4 +31,3 @@ Kaminari.configure do |config|
   # config.params_on_first_page = false
   # 最初のページのURLにページ番号のパラメータを含めるかどうかを設定します。コメントアウトされているため、デフォルトの設定が使用されます。
 end
-
