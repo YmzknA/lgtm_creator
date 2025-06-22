@@ -55,5 +55,4 @@ class LgtmsController < ApplicationController
   def lgtm_params
     params.require(:lgtm).permit(:content, :save)
   end
-
 end
